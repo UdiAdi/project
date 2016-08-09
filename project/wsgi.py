@@ -8,9 +8,14 @@ https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/
 """
 
 import os
+import sys
+
+## assuming your Django settings file is at '/home/my_username/projects/my_project/settings.py'
+path = '/home/udit/Desktop/djangoProject/venv/project/project'
+if path not in sys.path:
+    sys.path.append(path)
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'my_project.settings'
 
 from django.core.wsgi import get_wsgi_application
-
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings")
-
 application = get_wsgi_application()
