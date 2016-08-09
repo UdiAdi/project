@@ -1,0 +1,14 @@
+{% extends "mywebapp/header.html" %}
+
+{% block content %}
+
+<div class="container">
+	<h2 class="center">{{ post.title }}</h2>
+	<h3 class="center">By - <a href="/userprofile/{{ post.user_name.id }}">{{ post.user_name }}</a></h3>
+	<h4 class="center">{{ post.date }}</h4>
+	<p>{{ post.body|safe|linebreaks }}</p>
+</div>
+	
+	
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "mywebapp/header.html" %}
+
+{% block content %}
+
+
+
+<div class="container">	
+	
+	<h1>Great!!!</h1>
+		<table>
+			<tr>
+				<td>
+					Name
+				</td>
+				<td>
+					{{ user.first_name }}	
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Username
+				</td>
+				<td>
+					{{ user.user_name }}	
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Email address
+				</td>
+				<td>
+					{{ user.email_add }}	
+				</td>
+			</tr>
+			
+		</table>
+		<hr>
+		
+
+	
+
+</div>
+
+	
+
+{% endblock %}

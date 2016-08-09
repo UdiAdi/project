@@ -1,0 +1,49 @@
+{% extends "mywebapp/header.html" %}
+
+{% block content %}
+
+
+
+<div class="container">	
+	
+	<h1>User's posts</h1>
+	
+	{% for usr in user_lst %}
+
+		<p><strong><u>{{ usr.user_name }}</u></strong></p>
+
+		{% for pst in post_lst %}
+			
+			
+
+			{% if usr.user_name == pst.user_name %}
+				<!-- <p class="blue-text">hello</p> -->
+				Post owner: {{usr.user_name}} written by user_name {{pst.user_name}}<br>
+			{% else %}
+				<!-- <p class="red-text">world</p> -->
+
+			{% endif %}
+			
+	
+		{% endfor %}
+
+	<hr>
+	{% endfor %}
+
+	
+
+	
+	
+	
+
+	
+
+		
+
+	
+
+</div>
+
+	
+
+{% endblock %}

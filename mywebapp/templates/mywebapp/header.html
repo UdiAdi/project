@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hey, man!</title>
+	{% load staticfiles %}
+	<!-- <link rel="stylesheet" type="text/css" href="{% static 'mywebapp/css/bootstrap.min.css' %}"> -->
+	<link rel="stylesheet" type="text/css" href="{% static 'mywebapp/css/materialize.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'mywebapp/css/font-awesome-4.6.3/css/font-awesome.min.css' %}">
+
+	<!-- for this file -->
+	<link rel="stylesheet" type="text/css" href="{% static 'mywebapp/css/header.css' %}">
+	<!-- for blog main page -->
+	<link rel="stylesheet" type="text/css" href="{% static 'mywebapp/css/blog.css' %}">
+
+	<script type="text/javascript" src="{% static 'mywebapp/js/jquery-3.1.0.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mywebapp/js/materialize.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mywebapp/js/script.js' %}"></script>
+</head>
+<body>
+	<!-- <div id="header" class="container"></div> -->
+
+	<!-- blogtrial -->
+
+	
+
+	<nav class="green lighten-2">
+	    <div class="nav-wrapper">
+	    	<a href="{% url 'index' %}" class="brand-logo"><img src="{% static 'mywebapp/images/logo.png' %}"></a>
+		    <a href="{% url 'index' %}" id="titleText" class="brand-logo">Some Header Text Here</a>
+		    <!-- <p>Some Header Text Here</p> -->
+		    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars" aria-hidden="true"></i></a>
+		    <ul class="right hide-on-med-and-down">
+		    	<li><a href="{% url 'index' %}">Home</a></li>
+		        <li><a href="{% url 'login' %}">Login</a></li>
+		        <li><a href="{% url 'blogg' %}">Blog</a></li>
+		        <li><a href="{% url 'contact' %}">About</a></li>
+		    </ul>
+		    <ul class="side-nav" id="mobile-demo">
+		    	
+		        <li><a href="{% url 'index' %}">Home</a></li>
+		        <li><a href="{% url 'login' %}">Login</a></li>
+		        <li><a href="{% url 'blogg' %}">Blog</a></li>
+		        <li><a href="{% url 'contact' %}">About</a></li>		        
+		     </ul>
+	    </div>
+	</nav>
+
+		
+	<div>
+		{% block content %}
+		{% endblock %}
+	</div>
+	
+</body>
+</html>
