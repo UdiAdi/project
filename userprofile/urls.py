@@ -10,8 +10,12 @@ urlpatterns = [
 	#/userprofile/login
 	url(r'^login$', views.login_view, name="login"),
 
-	#/userprofile/posts
-	url(r'^posts/$', views.userposts, name="userposts"),
+	#/userprofile/users
+	url(r'^users/$', views.users, name="userss"),
+
+	#/userprofile/1/posts
+	url(r'^(?P<pk>\d+)/posts/$', views.pkposts, name="pkposts"),
+
 
 	# #/userprofile/register
 	# url(r'^register/$', views.register_view, name="register"),

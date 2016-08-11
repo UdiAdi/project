@@ -8,6 +8,7 @@ class Post(models.Model):
 	body = models.TextField()
 	date = models.DateTimeField()
 	def __str__(self):
-		return self.user_name
+		# return self.user_name
+		return self.title
 	# class Meta:
 	# 	ordering = ('title')

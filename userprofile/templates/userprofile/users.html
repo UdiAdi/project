@@ -1,0 +1,36 @@
+{% extends "mywebapp/header.html" %}
+
+{% block content %}
+
+
+
+<div class="container">	
+	
+	<h1>All users</h1>
+	
+	{% for usr in user_lst %}
+
+		<p><strong><u><a href="/userprofile/{{usr.id}}">{{ usr.user_name }}</a></u></strong></p>
+
+		
+
+	
+	{% endfor %}
+
+	
+
+	
+	
+	
+
+	
+
+		
+
+	
+
+</div>
+
+	
+
+{% endblock %}

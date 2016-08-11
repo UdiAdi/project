@@ -31,8 +31,28 @@ def userposts(request):
     # })
     # return HttpResponse(template.render(context))
 
+def pkposts(request, pk):
+    user = User.objects.get(id=pk)
+    # usrname = user.user_name
+    post = Post.objects.filter(user_name_id=pk)
+    # post = Post.objects.all()
 
+    template = loader.get_template('userprofile/pkposts.html')
+    context = RequestContext(request,{
+        'user_lst': user,
+        'post_lst': post,
+        
+    })
+    return HttpResponse(template.render(context), pk)
+    # return render_to_response('userprofile/pkposts.html')
 
+def users(request):
+    user = User.objects.all()
+    template = loader.get_template('userprofile/users.html')
+    context = RequestContext(request,{
+        'user_lst': user,
+    })
+    return HttpResponse(template.render(context))
 
 def login_view(request):
 	return render(request, 'userprofile/login.html')

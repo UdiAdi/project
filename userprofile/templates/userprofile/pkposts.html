@@ -6,16 +6,24 @@
 
 <div class="container">
 	
-	<h1>Login</h1>
+	<h1>Pk Posts</h1>
 	{% if error_message %}
 
 		{{ error_message }}
 	
 	{% endif %}
 
-	<form action="" method="POST">
-		
-	</form>
+	<h3>{{ user_lst }}</h3>
+
+	<ul>
+		{% for pst in post_lst %}
+
+			<li><a href="{% url 'blogg' %}{{pst.id}}/">{{ pst.title }}</a></li>
+
+		{% endfor %}
+	</ul>
+	
+
 	
 
 </div>
