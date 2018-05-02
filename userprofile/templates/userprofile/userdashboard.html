@@ -1,0 +1,37 @@
+{% extends "mywebapp/header.html" %}
+
+{% block content %}
+
+
+
+<div class="container">
+
+	<p>
+		Welcome, {{ username }}! Create your blog here:
+	</p>
+
+	<form action="" method="POST">
+		{% csrf_token %}
+
+		<!-- username, title, body, date		 -->
+						
+		<div class="row">
+		    <div class="input-field col s12 required" id="id_userid_container">
+		    	<input type="text" name="ptitle" id="ptitleid" />
+				<label for="ptitleid">Title</label>    				        
+		    </div>
+		</div>
+
+		<div class="row">
+		    <div class="input-field col s12 required" id="id_userid_container">
+		    	<textarea name="pbody" id="pbodyid"></textarea>
+				<label for="pbodyid">Body</label>    				        
+		    </div>
+		</div>
+
+		<input type="submit" value="Publish blog" />
+	</form>
+
+</div>
+
+{% endblock %}

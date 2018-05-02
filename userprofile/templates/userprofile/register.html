@@ -6,10 +6,62 @@
 
 <div class="container">
 	
-	<h1>Register</h1>
-	
+	<p>
+		<b>
+			{% if messages %}
+			<ul class="messages">
+			    {% for message in messages %}
+			    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+			    {% endfor %}
+			</ul>
+			{% endif %}
+		</b>	
+	</p>
 
-	
+
+	<div class="row">
+		<div class="col s12">
+			<h1>Register</h1>
+			
+			<form action="" method="POST">
+				{% csrf_token %}		
+				
+				
+				<div class="row">
+				    <div class="input-field col s12 required" id="id_userid_container">
+				    	<input type="text" name="rusername" id="rusernameid" />
+						<label for="rusernameid">Username</label>    				        
+				    </div>
+				</div>
+
+				<div class="row">
+				    <div class="input-field col s12 required" id="id_userid_container">
+				    	<input type="text" name="rname" id="rnameid" />
+						<label for="rnameid">Name</label>    				        
+				    </div>
+				</div>
+
+				<div class="row">
+				    <div class="input-field col s12 required" id="id_userid_container">
+				    	<input type="password" name="rpassword" id="rpasswordid" />
+						<label for="rpasswordid">Password</label>    				        
+				    </div>
+				</div>
+
+				<div class="row">
+				    <div class="input-field col s12 required" id="id_userid_container">
+				    	<input type="password" name="rcpassword" id="rcpasswordid" />
+						<label for="rcpasswordid">Confirm Password</label>    				        
+				    </div>
+				</div>
+
+				
+
+				<input type="submit" value="Register" />
+			</form>
+		</div>
+			
+	</div>
 
 </div>
 

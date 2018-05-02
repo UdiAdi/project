@@ -10,16 +10,24 @@ from django.views.generic import ListView, DetailView
 from blog.models import Post
 
 def blog_view(request):
-    """The view for your blog page"""
     
-    post_list = Post.objects.all().order_by("-date")[:25]
-    #post_list = ListView.as_view(queryset=Post.objects.all().order_by("-date")[:25])
+	post_list = Post.objects.all().order_by("-date")[:25]
 
-    template = loader.get_template('blog/blog.html')
-    context = RequestContext(request,{
-        'post_list': post_list,
-        
+	template = loader.get_template('blog/blog.html')
+
+	username = ""
+	loggedin = "1"
+    
+	if 'u_id' in request.session:
+		loggedin = "1"
+		username = request.session['u_id']
+	else:
+		loggedin = "0"
+	
+	context = RequestContext(request,{
+		'post_list': post_list,
+        'loggedin': loggedin,
+        'username': username,
     })
-    return HttpResponse(template.render(context))
-    # return HttpResponse('gdkgshdkgdk')
 
+	return HttpResponse(template.render(context))

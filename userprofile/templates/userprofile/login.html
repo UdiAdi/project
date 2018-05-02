@@ -5,17 +5,67 @@
 
 
 <div class="container">
-	
-	<h1>Login</h1>
-	{% if error_message %}
 
-		{{ error_message }}
-	
-	{% endif %}
+<h1>{{ msg }}</h1>
 
-	<form action="" method="POST">
-		
-	</form>
+	<p>
+		<b>
+			{% if messages %}
+			<ul class="messages">
+			    {% for message in messages %}
+			    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+			    {% endfor %}
+			</ul>
+			{% endif %}
+		</b>	
+	</p>
+
+	
+	<div class="row">
+		<div class="col s12">
+			<h1>Login</h1>
+
+			<form action="" method="POST">
+				{% csrf_token %}		
+						
+				<div class="row">
+				    <div class="input-field col s12 required" id="id_userid_container">
+				    	<input type="text" name="lusername" id="lusernameid" />
+						<label for="lusernameid">Username</label>    				        
+				    </div>
+				</div>
+
+				<!-- <div class="row">
+				    <div class="input-field col s12 required" id="id_userid_container">
+				    	<input type="text" name="lname" id="lnameid" />
+						<label for="lnameid">Name</label>    				        
+				    </div>
+				</div> -->
+
+				<div class="row">
+				    <div class="input-field col s12 required" id="id_userid_container">
+				    	<input type="password" name="lpassword" id="lpasswordid" />
+						<label for="lpasswordid">Password</label>    				        
+				    </div>
+				</div>
+
+				<!-- <div class="row">
+				    <div class="input-field col s12 required" id="id_userid_container">
+				    	<input type="password" name="lcpassword" id="lcpasswordid" />
+						<label for="lcpasswordid">Confirm Password</label>    				        
+				    </div>
+				</div> -->
+
+				
+
+				<input type="submit" value="Login" />
+			</form>
+		</div>
+			
+	</div>
+	
+	
+	
 	
 
 </div>
